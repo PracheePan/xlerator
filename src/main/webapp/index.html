@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="./">
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport">
+	<title>Ennoble Application</title>
+
+	<link rel="stylesheet" href="./css/base.css">
+
+	<script src="./node_modules/zone.js/dist/zone.js"></script>
+    <script src="./node_modules/typescript/lib/typescript.js"></script>
+    <script src="./node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="./node_modules/systemjs/dist/system.src.js"></script>
+    <script src="./node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="./js/systemjs.config.js"></script>
+    <script>
+      
+    	System.import('app/boot').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+
+  <body>
+    <my-app>
+		<div class="row loader">
+			<div class="col-lg-8 col-md-10">
+			    <svg viewBox="0 0 32 32" width="32" height="32">
+					<circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+		    	</svg>
+            </div>
+        </div>
+    </my-app>
+    <script type="text/javascript" src="./js/base.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,523 @@
+search/* ********** ABSTRACT TO main.js LATER (START) *********** */
+@charset "utf-8";
+
+@font-face {
+	font-family: 'XFINITYSansTT-Thin';
+	src: local('XFINITYSansTT-Thin'),
+		url('../css/fonts/XFINITYSansTT-Thin.ttf') format('truetype'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.eot?#iefix') format('embedded-opentype'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.svg') format('svg'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.woff') format('woff'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'XFINITYSansTT-Lgt';
+	src: local('XFINITYSansTT-Lgt'),
+		url('../css/fonts/XFINITYSansTT-Lgt.ttf') format('truetype'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.eot') format('eot'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.svg') format('svg'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.woff') format('woff'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'XFINITYSansTT-Med';
+	src: local('XFINITYSansTT-Med'),
+		url('../css/fonts/XFINITYSansTT-Med.ttf') format('truetype'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.eot') format('eot'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.svg') format('svg'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.woff') format('woff'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'XFINITYSansTT-Bold';
+	src: local('XFINITYSansTT-Bold'),
+		url('../css/fonts/XFINITYSansTT-Bold.ttf') format('truetype'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.eot') format('eot'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.svg') format('svg'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.woff') format('woff'),
+		url('../css/fonts/xfinity_sans_icons_v1.14.woff2') format('woff2');
+}
+
+
+html, body {
+	height: 100%;
+	width: 100%;
+	font-family: "XFINITYSansTT-Med", Helvetica, Arial, sans-serif;
+	overflow: hidden;
+	margin: 0;
+}
+
+
+.xfinity-logo {
+	position: relative;
+	top: 6px;
+	height: auto;
+	width: 80%
+}
+
+#whatisxoc a {
+	color: #19a3dc;
+	outline: none;
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    padding: 8px 8%;
+}
+
+
+#hero-bg {
+	background: url(../images/login/hero-bg.png) no-repeat center center fixed;
+	background-position: 0 0;
+	display: table;
+	height: 100vh;
+	position: relative;
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+	background-color: black !important;
+}
+
+#hero-shade {
+	position: absolute;
+    top: 60px;
+    right: 0px;
+    width: 30%;
+    height: 100%;
+    padding-left: 2%;
+    /* background: linear-gradient(to right, rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 1)) !important; */
+}
+
+#hero-bottomshade {
+position: fixed;
+    bottom: 100px;
+    width: 100%;
+    height: 0%;
+    box-shadow: 0px 0px 50px 60px #1e1e1e;
+}
+
+
+footer {
+	position: absolute;
+	bottom: -5px;
+	width: 100%;
+	height: 64px;
+	padding-bottom: 5px;
+	background-color: #dedede;
+	z-index: 20;
+}
+
+.footerhalves {
+	display: inline-block;
+	width: 49%;
+	height: 50px;
+	margin-top: 10px;
+}
+
+.comcast-logo {
+	margin-left: 25%;
+}
+
+.footerlinks {
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	font-size: 1em !important;
+}
+
+.footerlinks > label {
+	font-size: .8em !important;
+}
+
+.footerlegal {
+	position: relative;
+	bottom: 26px;
+	z-index: 20;
+	margin-left: 2%;
+	margin-right: 2%;
+	font-size: .7vw !important;
+	color: #888;
+	text-align: center;
+}
+
+
+
+/* ================== WIDTH ADJUSTMENTS ================== */
+@media only screen and (min-width: 991px) and (max-width: 1360px) {
+	.footerlinks > a {
+	  font-size: 1em !important;
+	}
+	.footerlinks > label {
+	  font-size: .85em !important;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+	.footerlinks > a {
+	  	font-size: .75em;
+	}
+	.footerlinks > label {
+	  	font-size: .55em;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+	.footerhalves {
+		width: 45%;
+		bottom: 10px;
+	}
+	.footerlinks > a {
+	  	font-size: 1.5vw;
+	}
+	.footerlinks > label {
+	  	font-size: 1.5vw !important;
+	}
+	.footerlegal {
+		position: relative;
+		bottom: 20px;
+	}
+	
+}
+
+
+/* ================== MOBILE LANDSCAPE ADJUSTMENTS ================== */
+@media screen and (max-height: 768px) {
+	.footerlegal {
+		margin-top: .5%;
+		font-size: .8vw;
+	}
+}
+
+
+/* ********** ABSTRACT TO main.js LATER (STOP) *********** */
+
+
+
+
+#signinsection {
+	height: 100vh;
+	//background-image: url("http://atlanta.braves.mlb.com/atl/ballpark/suntrust-park/images/chophouse-rendering4@2x.jpg");
+	//background-repeat: no-repeat;
+	//background-size:100% 100%;
+}
+
+
+#navbar-collapse-main > ul > li > a {
+  color: #00A3DF;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.right.carousel-control, .left.carousel-control {
+  display: none;
+}
+
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 7s;
+  transition-timing-function:linear;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+.carousel-content {
+  position: absolute;
+  width: 100%;
+  top: 10%;
+  margin-right: 2%;
+  z-index: 20;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+.carousel-indicators {
+    /* bottom: -40px; */
+    display: none;
+}
+
+.carousel-inner {
+   	margin-bottom: 20px;
+}
+
+#carouselButtons {
+    position: fixed;
+    bottom: 10%;
+    right: 20%;
+}
+
+
+sup {
+    font-size: .75vw;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    top: -1em;
+    left: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.container {
+    width: 100%;
+}
+
+.heading-h1 {
+    margin-top: 25%;
+    color: #ececec;
+    font-family: XFINITYSansTT-Lgt;
+    font-size: 2vw;
+    text-align: left;
+}
+
+.heading-h2 {
+    color: #ececec;
+    font-family: XFINITYSansTT-Lgt;
+    font-size: 1.3vw;
+    line-height: 1.25;
+    text-align: left;
+    padding-right: 1%;
+}
+
+.error {
+	font-size: 1.2vw;
+	color:#F2DEDE;
+}
+
+.errorblock {
+	background: red;
+	border: 1px solid white;
+	padding: 2%;
+	margin-top: 5%;
+	margin-bottom:2%;
+}
+
+#search-form {
+    //margin-top: 4%;
+}
+
+#search-input {
+    font-family: FontAwesome, XFINITYSansTT-Med;
+    font-style: normal;
+    font-size: 1vw;
+    font-weight: normal;
+    text-decoration: inherit;
+    border-radius: 3em;
+    background: #eee;
+}
+
+
+::-webkit-input-placeholder {
+	color: #333; opacity: 1 !important;
+}
+:-moz-placeholder {
+	color: #333;
+}
+::-moz-placeholder {
+	color: #333;
+}
+:-ms-input-placeholder {
+	color: #333;
+}
+
+
+input[type="search"]::-webkit-search-cancel-button {
+-webkit-appearance: searchfield-cancel-button;
+}
+
+a.ui-link:link, a.ui-link:visited, a.ui-link:active {
+	color: #444;
+	display: block;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	background-color: #ddd;
+	color: black;
+    border: none;
+    border-radius:0;
+}
+
+.ui-widget-content {
+    border: 1px solid #dddddd;
+    background: #eeeeee 50% top repeat-x;
+    color: #333333;
+    border-radius: .5em;
+}
+
+
+/* ================== WIDTH ADJUSTMENTS ================== */
+@media only screen and (min-width: 991px) and (max-width: 1360px) {
+    .input-group .form-control:first-child {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+	.heading-h2 {
+	    font-size: 1.85vw;
+	}
+	
+    .input-group .form-control:first-child {
+        font-size: 0.75em;
+    }
+}
+
+@media screen and (max-height: 1024px) and (max-width: 768px) {
+	#hero-shade {
+		position: absolute;
+	    top: 60px;
+	    right: 0px;
+	    width: 30%;
+	    height: 100%;
+	    padding-left: 2%;
+	    background: linear-gradient(to right, rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 1)) !important;
+	}
+}
+
+@media screen and (max-height: 768px) and (max-width: 1024px) {
+	#hero-shade {
+		position: absolute;
+	    top: 60px;
+	    right: 0px;
+	    width: 30%;
+	    height: 100%;
+	    padding-left: 2%;
+	    background: linear-gradient(to right, rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 1)) !important;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+	.navbar-default {
+    	padding: 0px 0%;
+	}
+	
+	#hero-bg {
+		background: url(../images/login/mobile-hero-bg.png) no-repeat center center fixed;
+		background-position: 0 0;
+		display: table;
+		height: 100%;
+		position: relative;
+		width: 100%;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;	
+	}
+	
+	#hero-shade {
+	    position: absolute;
+	    top: 40px;
+	    leftt: 0px;
+	    width: 100%;
+	    height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+	}
+
+	.heading-h1 {
+	    margin-top: 25%;
+	    color: #ececec;
+	    font-family: XFINITYSansTT-Thin;
+	    font-size: 12vw;
+	    text-align: left;
+	}
+	
+	.heading-h2 {
+	    color: #ececec;
+	    font-family: XFINITYSansTT-Thin;
+	    font-size: 5.5vw;
+	    line-height: 1.25;
+	    text-align: left;
+	    padding-right: 1%;
+	}	
+
+	#search-input {
+	    font-size: 3.5vw;
+	}
+	
+	.carousel-content {
+        top: 7%;
+        height: 90%;
+        background: rgba(0, 0, 0, 0.55);
+    }
+    .input-group .form-control:first-child {
+        font-size: 1.1em;
+    }
+    footer {
+	    position: absolute;
+	    bottom: -5px;
+	    width: 100%;
+	    padding-bottom: 5px;
+	    background-color: #dedede;
+	    z-index: 20;
+	}
+}
+
+
+
+/* ================== MOBILE LANDSCAPE ADJUSTMENTS ================== */
+@media screen and (max-height: 480px) {
+	#hero-shade {
+	    position: absolute;
+	    top: 40px;
+	    leftt: 0px;
+	    width: 100%;
+	    height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+	}
+	.heading-h1 {
+	    margin-top: 5%;
+	    font-size: 6vw;
+    }
+    .heading-h2 {
+	    font-size: 3vw;
+    }
+    #search-form {
+	    margin-top: 0;
+	    position: relative;
+	    top: 40px;
+	    font-size: 1vw;
+    }
+    #search-input {
+	    font-family: FontAwesome, XFINITYSansTT-Med;
+	    font-style: normal;
+	    font-size: 2vw;
+	    font-weight: normal;
+	    text-decoration: inherit;
+	    border-radius: 3em;
+	    background: #eee;
+	    top: -30px;
+	}
+    .carousel-indicators {
+        display:none;
+    }
+}

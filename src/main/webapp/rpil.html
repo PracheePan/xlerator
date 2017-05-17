@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="./">
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="initial-scale=1.0, width=device-width" name="viewport">
+	<title>Venue Console</title>
+
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+	<script src="./node_modules/zone.js/dist/zone.js"></script>
+    <script src="./node_modules/typescript/lib/typescript.js"></script>
+    <script src="./node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="./node_modules/systemjs/dist/system.src.js"></script>
+    <script src="./js/systemjs.config.js"></script>
+    <script>
+    	System.import('app/boot').catch(function(err) {
+    		console.error(err);
+		});
+    	
+ 		var _angularComponent = {};
+ 		
+		window.addEventListener("dragover", function(e) {
+		    e = e || event;
+		    e.preventDefault();
+		}, false);
+		
+		window.addEventListener("drop", function(e) {
+		    e = e || event;
+		    e.preventDefault();
+            var dt = e.dataTransfer;
+            var files = dt.files;
+            readChosenFiles(files);
+		}, false);
+				
+		function setTSfunction(angularComponent) {
+			_angularComponent = angularComponent;
+		}
+		
+		function uploadFileViaTS(targetFile) {   
+			if(_angularComponent.zone) {
+		 		_angularComponent.zone.run(function() {_angularComponent.addAccountFn(targetFile)});
+			}
+		}
+		
+		function readChosenFiles(files) {
+		    for(var i = 0; i < files.length; i++) {
+		        var file = files[i];
+		        uploadFileViaTS(file);
+		    }
+		}
+   	</script>
+  </head>
+
+  <body>
+    <ennoapp>
+		<div class="row loader">
+			<div class="col-lg-8 col-md-10">
+			    <svg viewBox="0 0 32 32" width="32" height="32">
+					<circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+		    	</svg>
+            </div>
+        </div>
+    </ennoapp>
+    <script type="text/javascript" src="./js/base.js"></script>
+  </body>
+
+</html>
